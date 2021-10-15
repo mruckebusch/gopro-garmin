@@ -1,0 +1,24 @@
+2021-07-12
+	parcours des fichiers MP4 et GPX
+	check si un fichier gpx correspond à une vidéo (dates)
+2021-07-13
+	_gps_logs_exist
+	_upload_clip
+2021-07-16
+	sampled the expected behavior with 6 metrics (see image)
+	split function __is_gps_log_within_clip into multiple functions
+	distance POC
+
+2021-07-24
+        added fit to csv conversion
+	deprecated gps distance calculation
+2021-08-14
+	debugging infinite loop
+2021-20-08
+	split _get_files_with_date to use fit names and gopro ffprobe
+2021-08-25
+	added function __get_files_modified_asc to sort clips
+	managed upside-down videos with an empty drawtext in __convert_csv_to_cmd
+	moved repetitive call to _get_fit_files_with_date out of the deepest for loop: improved speed
+2021-08-26
+	added Elapsed time + offset between clips

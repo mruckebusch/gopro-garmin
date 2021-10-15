@@ -1,0 +1,20 @@
+PREREQUISITES
+bashhate		(optionnal) automated style checker for bash scripts
+bc				arbitrary precision numeric processing language
+csvtool			to manipulate CSV files
+curl			to upload to FTP server
+ffmpeg			for video conversion and drawing text overlays
+FitCSVTool.jar	Java archive provided as part of Garmin Fit SDK
+				it can be downloaded here https://developer.garmin.com/fit/download/
+java			jre version 1.8.0 or higher, to run the file FitCSVTool.jar
+jq				lightweight and flexible command-line JSON processor
+				used for parsing ffmpeg json outputs
+shellcheck 		(optionnal) analysis tool that automatically finds bugs in your shell scripts
+
+HOW TO VERIFY CODE
+bashate *.sh \
+&& shellcheck --check-sourced --external-sources main.sh \
+&& bash -o noexec main.sh
+
+HOW TO RUN
+./main.sh

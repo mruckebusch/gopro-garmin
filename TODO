@@ -1,0 +1,54 @@
+MUST HAVE
+prendre en compte le démarrage du GPS tardif (début de parcours)
+intégrer les evenements timer stop/start avec une pause dans le fichier ffmpeg
+		 (aucune donnée affichée)
+Traiter les balises #TODO des scripts sh
+Ajouter des vérifs [[ -z "${var} ]] pour éviter les erreurs "unbound variable"
+Déclenchement du script au mount de GoPro
+	      voir ici http://jasonwryan.com/blog/2014/01/20/udev/
+		  voici les logs apparaissant dans Tools/syslog
+
+
+
+Utiliser des variables tableau plutôt que liste de string (exemple fonction __convert_gps_logs)
+	cf. reco ici https://www.javacodegeeks.com/2013/10/shell-scripting-best-practices.html#BP6
+Supprimer les set +x, set -x
+
+
+NICE TO HAVE
+TODO export multiple mp4 formats (Lenovo/Smartphone/Youtube)
+ # Upload OVH - for Lenovo (720p, 25fps)
+ # Upload OVH - for Smartphone (2340x1080 pixels): 1080p, 25fps
+ # Upload Youtube :
+ #  2160p: 3840x2160
+ #  1440p: 2560x1440
+ #  1080p: 1920x1080
+ #  720p: 1280x720
+effacer les metrics non dispo (exemple "Heart rate BPM" -> ne rien écrire)
+Utiliser gpsbabel plutôt que java + Garmin FitCSVTool.jar
+sortir la logique de conversion des logs gps FIT>CSV (__fit_to_csv_records) de l'itération des clips (répétition inutile)
+sortir la logique de drawtext après la génération du fichier ffmpeg cmd
+lire la doc https://developer.garmin.com/fit/protocol/
+Remplacer l'assignation is_garmin_mounted=_is_garmin_mounted par une vraie valeur stockée
+Remplacer l'utilisation de eval (dangereux?) dans video.sh
+Utiliser les variables globales ?
+shfmt.el pour formatter les scripts bash dans emacs
+Format Readme.md
+Ajouter projet à Github
+Exploiter la fonction GoPro GPS
+synchroniser vidéo & GPS en écoutant les événements autopause (présents dans l'audio du clip GoPro)
+Optimiser le parsing du CSV : https://stackoverflow.com/questions/28118296/bash-script-is-super-slow
+Fichier de paramètres plutôt que variables
+Tests unitaires
+Vérifier les cas non-passants, les multiples fichiers GPS par vidéo, les vidéos sur plusieurs jours
+Cas de clips étalés sur plusieurs jours, aggrégation résultant en plusieurs clips
+Ajouter l'audio provenant du voice recorder (filtre de fusion audio "amix")
+Ajouter une transition texte au début de chaque fichier de log avec les données synthétiques (Date, température, lieu "e.g. Paris, France", distance totale, vitesse moyenne, calories)
+
+DONE ou cancel mais backupé
+overlay des metrics A CHAQUE SECONDE
+         cf. https://stackoverflow.com/questions/8213865/ffmpeg-drawtext-over-multiple-lines
+CANCELLED Shellcheck + Emacs, through Flycheck or Flymake
+Rendre le script POSIX, portable avec les sheebangs #!/bin/sh, #!/bin/ash, #!/bin/dash, #!/bin/zsh
+ cf. script Tools/shellscheck.sh
+Lancer ffmpeg avec préfixe nice pour réduire la consommation et chaleur CPU
